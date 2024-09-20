@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Технологии</title>
+{% endblock %}
+
+{% block content %}
+  {% comment %}Колонки с отступом сверху и снизу{% endcomment %}
+  <div class="row">
+    <h1>Вот что я умею</h1>
+    {% comment %}Боковой блок со списком технологий Займет всю ширину блока на мобильном и 25% при размерах экрана ≥768px{% endcomment %}
+
+    <aside class="col-12 col-md-3">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Python</li>
+        <li class="list-group-item">Django</li>
+        <li class="list-group-item">DRF</li>
+        <li class="list-group-item">Docker (CI/CD)</li>
+        <li class="list-group-item">SQL</li>
+      </ul>
+    </aside>
+    {% comment %}Статья Займет всю ширину блока на мобильном и 75% при размерах экрана ≥768px{% endcomment %}
+    <article class="col-12 col-md-9">
+      <p>С точки зрения банальной эрудиции, в аспекте призматической парадоксальности, цинизм ваших слов в данной конспекции ассоциируется мистификацией парадоксальных иллюзий. Разложим его семилинейным функционалом в матpицy пpямоyгольнyю тpоеpанговyю обводимyю собственной неодноpодностью непpеpывно интегpиpyемой в pазpыв попеpек интеpвала pасходимости кpиволинейным экстpемyмом чеpез область целостности!</p>
+    </article>
+  </div>
+{% endblock %}

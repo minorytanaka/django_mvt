@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Записи группы {{ group_title }}</title>
+{% endblock %}
+
+{% block content %}
+  {% if group_title %}
+    <div class="container py-5">
+      <h2>Группа: {{ group_title }}</h2>
+      <p>Описание: {{ group_description }}</p>
+      <p>Количество записей группы: {{ posts_count }}</p>
+    </div>
+    {% for post in page_obj %}
+      <div class="container py-5">
+        <article>
+          <ul>
+            <li>
+              Автор: {{ post.author.get_full_name }}
+              <a href="{% url 'posts:profile' post.author.username %}">все посты пользователя</a>
+            </li>
+            <li>Дата публикации: {{ post.pub_date|date:'d E Y' }}</li>
+          </ul>
+          <p>{{ post.text }}</p>
+          <a href="{% url 'posts:post_detail' post.pk %}">подробная информация</a>
+        </article>
+        {% if not forloop.last %}
+          <hr />
+        {% endif %}
+      </div>
+    {% endfor %}
+    <div class="container py-5">
+      {% include 'posts/includes/paginator.html' %}
+    </div>
+  {% else %}
+    <p>Нет записей для этой группы.</p>
+  {% endif %}
+{% endblock %}

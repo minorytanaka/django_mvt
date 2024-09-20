@@ -1,3 +1,9 @@
-Django==2.2.19
+asgiref==3.8.1
+Django==4.2.16
+django-debug-toolbar==4.4.6
+django-extensions==3.2.3
+isort==5.13.2
+pysqlite3==0.5.3
 pytz==2024.1
 sqlparse==0.5.1
+typing_extensions==4.12.2
